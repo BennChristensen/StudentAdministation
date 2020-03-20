@@ -1,0 +1,35 @@
+﻿@model StudentAdministrationSystem.Models.EnrollStudentViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Enroll</title>
+</head>
+<body>
+    <div>
+        <h4>Enroll Student</h4>
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Student.Name);
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Student.Name);
+            </dd>
+        </dl>
+        <h3>Chose Subject</h3>
+        @using (Html.BeginForm("Enroll", "Student"))
+        {
+            @Html.DropDownListFor(model => model.SelectedValue, Model.SelectList)
+            @Html.HiddenFor(model => model.Student.StudentId)
+            <br />
+            <input type="submit" value="Enroll" />
+        }
+    </div>
+</body>
+</html>

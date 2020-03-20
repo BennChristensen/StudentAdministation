@@ -1,0 +1,23 @@
+﻿@model StudentAdministrationSystem.Models.EnrollStudentViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Enrollment done</title>
+</head>
+<body>
+    <div>
+        <h4>Enrollment done</h4>
+        <hr />
+        <span>@Model.Student.Name er tilmeldt @Model.SelectedSubject.Name</span>
+        <div>@Model.Student.Subjects[0].Name</div>
+        @Html.ActionLink("Back", "Details", new { id = Model.Student.StudentId})
+    </div>
+</body>
+</html>

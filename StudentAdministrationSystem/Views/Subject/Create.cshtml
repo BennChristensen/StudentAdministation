@@ -1,0 +1,38 @@
+﻿@model StudentAdministrationSystem.Models.Subject
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create new Subject</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <h4>New Subject</h4>
+        <hr />
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name, "")
+        <br />
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+        <br />
+        <input type="submit" value="Create" />
+    }
+
+    <div>
+        @Html.ActionLink("Back to the overview", "Index")
+    </div>
+    <scriptsrc ="~/Scripts/jquery-1.10.2.min.js">
+        </script>
+        <scriptsrc ="~/Scripts/jquery.validate.min.js">
+            </script>
+            <scriptsrc ="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
